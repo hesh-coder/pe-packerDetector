@@ -1,4 +1,5 @@
 import pefile
+import argparse
 
 def importKnownPackers(filePath):
     knownPackers = set()
