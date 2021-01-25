@@ -1,4 +1,4 @@
-import prefile
+import pefile
 
 def importKnownPackers(filePath):
     knownPackers = set()
