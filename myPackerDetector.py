@@ -20,7 +20,7 @@ def detectPackers(pe, knownPackers):
 
     return foundPackers
 
-if __name__ = '__main__':
+if __name__ == '__main__':
 	parser = argparse.ArgumentParser(
 		description="Identify packers in a given file"
 	)
