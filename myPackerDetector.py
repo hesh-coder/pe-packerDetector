@@ -26,8 +26,22 @@ if __name__ = '__main__':
 	)
 
 	parser.add_argument(
-		"-target_file",
+		"-target_malware",
 		help="Target file for packet analysis."
 	)	
-
+			
+	parser.add_argument(
+		"-known_packers",
+		help="File of known packers to import."
+	)
 	
+	args = parser.parse_args()
+	targetFile = args.target_file
+	knownPackerFile = args.known_packers
+
+	knownPackers = importKnownPackers(knownPackerFile)
+	detectedPackers = detectPackers(targetFile, knownPackers)
+
+	print("Packers detected in ", targetFile, " :")
+	for item in detectedPackers:
+		print(item)		
