@@ -37,12 +37,12 @@ if __name__ == '__main__':
 	)
 	
 	args = parser.parse_args()
-	targetFile = args.target_file
+	targetMalware = args.target_malware
 	knownPackerFile = args.known_packers
 
 	knownPackers = importKnownPackers(knownPackerFile)
-	detectedPackers = detectPackers(targetFile, knownPackers)
+	detectedPackers = detectPackers(targetMalware, knownPackers)
 
-	print("Packers detected in ", targetFile, " :")
+	print("Packers detected in ", targetMalware, " :")
 	for item in detectedPackers:
 		print(item)		
