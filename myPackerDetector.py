@@ -11,3 +11,13 @@ def importKnownPackers(filePath):
         return None
 
     return knownPackers
+
+def detectPackers(pe, knownPackers):
+    foundPackers = set()
+    for section in pe.sections:
+        if section.name in knownPackers:
+            matches.add(section.name)
+
+    return foundPackers
+
+
