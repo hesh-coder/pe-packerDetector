@@ -20,4 +20,14 @@ def detectPackers(pe, knownPackers):
 
     return foundPackers
 
+if __name__ = '__main__':
+	parser = argparse.ArgumentParser(
+		description="Identify packers in a given file"
+	)
 
+	parser.add_argument(
+		"-target_file",
+		help="Target file for packet analysis."
+	)	
+
+	
